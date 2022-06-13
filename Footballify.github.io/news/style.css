@@ -1,0 +1,585 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Azeret+Mono&family=Courier+Prime&display=swap');
+*{margin: 0; padding: 0;box-sizing: border-box;font-family: 'Poppins', sans-serif;} 
+.hideThis {visibility: hidden;}
+#cover {position: fixed; height: 100%; width: 100%; top:0; left: 0; background: #000; z-index:9999;}
+html,body {height: 100%;}
+body {background-color: #58cb47;}
+/* Navbar */
+nav{display: flex;height: 60px;width: 100%;background: #76e56b;align-items: center;justify-content: space-between;padding: 0 50px 0 100px;flex-wrap: wrap;margin-bottom: 10px;}
+nav .logo{color: #fff;font-size: 35px;font-weight: 600;}
+nav ul{display: flex;flex-wrap: wrap;list-style: none;}
+nav ul li{margin: 0 5px;}
+nav ul li a{color: #f2f2f2;text-decoration: none;font-size: 18px;font-weight: 500;padding: 8px 15px;border-radius: 5px;letter-spacing: 1px;transition: all 0.3s ease;}
+nav ul li a.active,
+nav ul li a:hover{color: #111;background: #fff;}
+nav .menu-btn i{color: #fff;font-size: 22px;cursor: pointer;display: none;}
+input[type="checkbox"]{display: none;}
+@media (max-width: 1000px){nav{padding: 0 40px 0 50px;}}
+@media (max-width: 920px) {nav .menu-btn i{display: block;}#click:checked ~ .menu-btn i:before{content: "\f00d";}nav ul{position: fixed;top: 80px;left: -100%;background: #111;height: 100vh;width: 100%;text-align: center;display: block;transition: all 0.3s ease;}#click:checked ~ ul{left: 0;}nav ul li{width: 100%;margin: 40px 0;}nav ul li a{width: 100%;margin-left: -100%;display: block;font-size: 20px;transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);}#click:checked ~ ul li a{margin-left: 0px;}nav ul li a.active,nav ul li a:hover{background: none;color: cyan;}}
+
+.content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: -1;
+  width: 100%;
+  padding: 0 30px;
+  color: #1b1b1b;
+}
+.content div{
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.parentDiv:hover{
+  background-color: #e8e8e8;
+}
+.parentDiv {
+width: 450px;
+text-align: center;
+background-color: #f4f4f4;
+border-bottom: 1px groove;
+}
+.league{
+  font-size: large;
+  font-weight: 700;
+  background-color: #e8e8e8;
+  border-bottom: 1px groove;
+  box-sizing: border-box;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.flag{
+  border: 1px solid #585858;
+  border-radius: 9px;
+  height: 19px;
+  float: right;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+.status{
+  float: left;
+  margin-left: 10px;
+  margin-top: 2px;
+  padding-right: 8px;
+}
+.team1 {
+  float: left;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: baseline;
+  margin-left: 10px;
+}
+
+.score1 {
+  margin-left: 419px;
+}
+
+.team2 {
+  float: left;
+  margin-left: 10px;
+}
+
+
+.score2 {
+  margin-left: 419px; 
+}
+
+.winner {
+  font-weight: 500;
+  color: rgb(34, 33, 33);
+}
+
+.loser{
+  font-weight: 300;
+  opacity: 70%;
+}
+
+.hide{
+  opacity: 0;
+}
+
+.live {
+  color: #f75959;
+}
+
+#wrapper {
+  clear: both;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 33.2rem 28.260000000000005rem 35rem;
+  justify-content: center;
+}
+#left {
+  background-color: #ffffff;
+    width: 475px;
+    float: left;
+    margin-left: 57px;
+    height: 100%;
+    border-left: 1px groove;
+}
+.parentContainer {
+  float:left;
+  background-color: white;
+  border-top: 1px groove;
+  border-left: 1px groove;
+  border-right: 1px groove;
+}
+#right {
+  background-color: #ffffff;
+  width: 475px;
+  float: left;
+  margin-right: 30px;
+  background-color: white;
+  border-right: 1px groove;
+}
+
+.newsimg {
+  width: auto;
+  max-width: 25%;
+  height: auto;
+  margin-left: 10px;
+  margin-top: 7px;
+  float: left;
+  margin-right: 2px;
+  border: 2px solid black;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  height: 120px;
+  object-fit: cover;
+}
+
+
+.addborder {
+  border-top: 1px groove;
+  border-left: 1px groove;
+}
+
+.innerText{
+  text-align: center;
+    padding-right: 5px;
+    font-size: 15px;
+    display: flex;
+    
+    flex-direction: column;
+    line-height: 20px;
+  
+}
+
+.innerText>strong{
+  margin-top: 24px;
+}
+
+.newsel {
+  height: 136px;
+  background-color: white;
+}
+
+.roundedBar {
+  border-top: 3px solid #e3e3e3;
+  border-radius: 217px;
+  width: 90%;
+  margin-left: 22px;
+
+}
+
+.square {
+    object-fit: cover;
+    width:120px;
+    height:120px;
+}
+
+.imgcont {
+  height: 132px;
+}
+
+.linkDiv{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+.blueLink {
+  color: rgb(0, 187, 255);
+}
+
+.hiddenMain {
+  display: none;
+}
+
+.fixture {
+  display: inline-block;
+}
+
+.rightDiv {
+  text-align: center;
+  overflow: hidden; 
+  background: #696969;
+  color: white;
+}
+.rightDivScores {
+  text-align: center;
+  overflow: hidden; 
+  padding-top: 18px;
+  padding-bottom: 18px;
+  background: #c9c9c9;
+}
+
+.rightBar {
+  font-weight: 700;
+  background-color: #e8e8e8;
+  border-bottom: 1px groove;
+  box-sizing: border-box;
+  text-align: left;
+  padding-left: 10px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px groove;
+}
+
+.logo1 {
+  height: 70px;
+  width: 70px;
+  display: inline-block;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+  border: 1px solid lightgray;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.fixturel {
+  display: inline;
+}
+
+.fixturer { 
+  display: inline;
+}
+
+.timer{
+  display: inline-block;
+  margin-left: 40px;
+  margin-right: 40px;
+  font-size: 35px;
+  font-weight: 200;
+  margin-top: 10px;
+  vertical-align: top;
+}
+.statsButton{
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: #c9c9c9;
+    border: 2px solid #a0a0a0;
+    border-radius: 42px;
+}
+
+.statsButton:hover{
+  background: #ffffff;
+  color: black;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+
+}
+
+.eventsButton {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: #c9c9c9;
+    border: 2px solid #a0a0a0;
+    border-radius: 42px;
+}
+
+.eventsButton:hover{
+  background: #ffffff;
+  color: black;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+  transition: all 0.3s ease;
+
+}
+
+.infoButton {
+  padding-left: 32px;
+  padding-right: 26px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: #c9c9c9;
+    border: 2px solid #a0a0a0;
+    border-radius: 42px;
+}
+
+.infoButton:hover{
+  background: #ffffff;
+  color: black;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+  transition: all 0.3s ease;
+
+}
+
+.lineupButton {
+  padding-left: 32px;
+  padding-right: 32px;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  background: #c9c9c9;
+    border: 2px solid #a0a0a0;
+    border-radius: 42px;
+}
+
+.lineupButton:hover{
+  background: #ffffff;
+  color: black;
+  transition: all 0.3s ease;
+  border-radius: 45px;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+  transition: all 0.3s ease;
+
+}
+
+.navbarMini {
+  background: #c9c9c9;
+  padding: 0px;
+  flex-wrap: nowrap;
+  box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+  padding: 7px;
+}
+
+.clicked {
+    background: #ffffff;
+    color: black;
+    transition: all 0.3s ease;
+    border-radius: 45px;
+    box-shadow: 0px 3px 50px rgb(0 0 0 / 20%);
+    transition: all 0.3s ease;
+}
+
+.referee {
+  
+  margin-left: 12px;
+}
+.venue {
+  
+  margin-left: 12px;
+}
+.city {
+  
+  margin-left: 12px;
+}
+
+.lineupParentAway {
+  text-align: right;
+}
+
+.lineupC {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+.lineupC>.lineupParentHome {
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+}
+
+.lineupC>.lineupParentAway {
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+}
+
+.statsC {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 12px;
+}
+
+
+.statsC>div{
+  width: 33.3333333333333333333333333333333333333333333333333333333%;
+  border-bottom: 1px solid #afa6a6;
+}
+
+.awayStats {
+  text-align: right;
+}
+
+.statName {
+  text-align: center;
+}
+
+.startEleven {
+    display: flex;
+    font-weight: 600;
+    justify-content: space-evenly;
+}
+
+.fixtureInfo {    
+  display: flex;
+  font-weight: 600;
+  justify-content: space-evenly;
+}
+
+
+.light {
+  color: #999999;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 200;
+  margin-left: 7px;
+  margin-right: 7px;
+}
+
+.ball {
+  width: 18px;
+  float: left;
+  margin-right: 6px;
+  margin-left: 5px;
+}
+
+.ballFloat {
+  width: 18px;
+  margin-right: 6px;
+  margin-left: 5px;
+  float: right;
+}
+
+.awayEvent{
+  text-align: right;
+  border-bottom: 1px solid #afa6a6;
+  line-height: 20px;
+  margin-top: 3px;
+
+
+}
+
+.homeEvent {
+  border-bottom: 1px solid #afa6a6;
+
+  line-height: 20px;
+  margin-top: 3px;
+
+}
+
+.card {
+  margin-top: -3px;
+  display: inline-block;
+  margin-left: 5px;
+  margin-right: 8px;
+}
+
+.cardFloat {
+  margin-top: -3px;
+  margin-left: 5px;
+  margin-right: 8px;
+  float: right;
+  margin-left: 9px;
+}
+
+.sub {
+  width: 20px;
+  float: left;
+  margin-right: 3.5px;
+  margin-left: 3px;
+}
+
+.subFloat {
+  width: 20px;
+  float: right;
+  margin-right: 6px;
+  margin-left: 7px;
+
+}
+
+.eventsC {
+  display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    padding: 11px;
+    margin-top: 7px;
+}
+
+.penFloat {
+  float: right;
+  margin-left: 4px;
+  margin-right: 6px;
+}
+
+.pen {
+  margin-left: 4px;
+  margin-right: 6px;
+float: left;
+}
+
+  .og {
+    min-width: 16px;
+    display: inline-block;
+    fill: #db6767;
+    vertical-align: middle;
+    margin-left: 3px;
+    margin-right: 6px;
+    width: 23px;
+    height: 21px;
+  }
+
+  .penMiss {
+    margin-left: 3.5px;
+    margin-right: 5px;
+    float: left;
+  }
+
+  .penMissFloat {
+    margin-left: 3.5px;
+    margin-right: 5px;
+    float: right;
+  }
+
+  .webname {
+    color: white;
+    text-decoration: none;
+  }
+
+  .timeDiv {
+    float: left;
+    border-right: 1px solid #cbcbcb;
+    line-height: 15px;
+    margin-left: 8px;
+    margin-top: 7px;
+    padding-right: 10px;
+  }
+
+  .gameTime {
+    font-size: 12px;
+    color: #5f5f5f;
+  }
+
+  .var {
+    margin: 0px 4.5px;
+    float: left;
+    fill: #0f6dd0;
+  }
+
+  .varRight {
+    margin: 0px 4.5px;
+    float: right;
+    fill: #0f6dd0;
+  }
